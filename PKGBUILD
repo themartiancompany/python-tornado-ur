@@ -1,7 +1,8 @@
-# Maintainer: Thomas Dziedzic < gostrc at gmail >
+# Maintainer: Felix Yan <felixonmars@gmail.com>
+# Contributor: Thomas Dziedzic < gostrc at gmail >
 
 pkgname=('python-tornado' 'python2-tornado')
-pkgver=2.4
+pkgver=2.4.1
 pkgrel=1
 pkgdesc='open source version of the scalable, non-blocking web server and tools'
 arch=('any')
@@ -9,9 +10,9 @@ url='http://www.tornadoweb.org/'
 license=('Apache')
 makedepends=('python-distribute' 'python2-distribute')
 source=("https://github.com/downloads/facebook/tornado/tornado-${pkgver}.tar.gz")
-md5sums=('c738af97c31dd70f41f6726cf0968941')
 
 build() {
+  cd "$srcdir"
   cp -r tornado-${pkgver} python2-tornado-${pkgver}
 
   cd tornado-${pkgver}
@@ -29,7 +30,7 @@ build() {
 package_python-tornado() {
   depends=('python')
 
-  cd tornado-${pkgver}
+  cd "$srcdir/tornado-${pkgver}"
 
   python setup.py install --root="${pkgdir}" --optimize=1
 }
@@ -37,7 +38,8 @@ package_python-tornado() {
 package_python2-tornado() {
   depends=('python2')
 
-  cd python2-tornado-${pkgver}
+  cd "$srcdir/python2-tornado-${pkgver}"
 
   python2 setup.py install --root="${pkgdir}" --optimize=1
 }
+md5sums=('9b7146cbe7cce015e35856b592707b9b')
