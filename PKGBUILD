@@ -2,7 +2,7 @@
 # Contributor: Thomas Dziedzic < gostrc at gmail >
 
 pkgname=('python-tornado' 'python2-tornado')
-pkgver=3.0.0
+pkgver=3.0.1
 pkgrel=1
 pkgdesc='open source version of the scalable, non-blocking web server and tools'
 arch=('any')
@@ -42,4 +42,4 @@ package_python2-tornado() {
 
   python2 setup.py install --root="${pkgdir}" --optimize=1
 }
-md5sums=('4fc45f969f69f89e5133714663072462')
+md5sums=('114c0fe8d081d7963e34ba153cc94c14')
