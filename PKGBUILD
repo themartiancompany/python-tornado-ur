@@ -4,7 +4,7 @@
 pkgbase=python-tornado
 pkgname=('python-tornado' 'python2-tornado')
 pkgver=5.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc='open source version of the scalable, non-blocking web server and tools'
 arch=('x86_64')
 url='http://www.tornadoweb.org/'
@@ -39,7 +39,7 @@ check() {
   (
     cd tornado-$pkgver
     python setup.py install --root="$PWD/tmp_install" --optimize=1
-    export PYTHONPATH="$PWD/tmp_install/usr/lib/python3.6/site-packages:$PYTHONPATH"
+    export PYTHONPATH="$PWD/tmp_install/usr/lib/python3.7/site-packages:$PYTHONPATH"
     cd tmp_install
     python -m tornado.test.runtests
     python -m tornado.test.runtests --ioloop=tornado.platform.select.SelectIOLoop
