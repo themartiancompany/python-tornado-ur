@@ -1,0 +1,17 @@
+pkgbase = python-tornado
+	pkgdesc = open source version of the scalable, non-blocking web server and tools
+	pkgver = 6.3.1
+	pkgrel = 1
+	url = https://www.tornadoweb.org/
+	arch = x86_64
+	license = Apache
+	checkdepends = python-pycurl
+	checkdepends = python-twisted
+	makedepends = python-setuptools
+	depends = python
+	optdepends = python-pycurl: for tornado.curl_httpclient
+	optdepends = python-twisted: for tornado.platform.twisted
+	source = python-tornado-6.3.1.tar.gz::https://github.com/tornadoweb/tornado/archive/v6.3.1.tar.gz
+	sha512sums = acbc2c38ab6e8d7a764615d224e395dcebb71cc5e8f311059429d540f46324bdb3568b2682d9a7d3379e12f92760b211bebef0d5a164159a52bc706e1a766706
+
+pkgname = python-tornado
